@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import '@fontsource/noto-sans-thai';
-import './App.css';
-import { Button, ThemeProvider } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import { MyTheme } from './MyTheme';
 import MyRoutes from './Routes';
 

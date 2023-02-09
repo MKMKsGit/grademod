@@ -1,5 +1,5 @@
 const Password = () => {
-    return <></>;
+    return <>Forget Password</>;
 }
 
 export default Password;
