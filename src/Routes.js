@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Password from "./pages/Landing/Password";
 import NotFound from "./pages/NotFound";
@@ -18,10 +18,10 @@ import Management from "./pages/Admin/Management";
 const MyRoutes = () => {
     return (<BrowserRouter>
             <Routes>
-                <Route path="/">
+                <Route path="/" element={<><Outlet /></>}>
                     <Route index element={<Landing />}/>
                     <Route path="forgetpassword" element={<Password />}/>
-                    <Route path=":id/" element={<Layout />}>
+                    <Route path="user/:id/" element={<Layout />}>
                         <Route index element={<UserDashboard />}/>
                         <Route path="database" element={<Database />}/>
                         <Route path="honor" element={<Honor />}/>
@@ -36,7 +36,7 @@ const MyRoutes = () => {
                         </Route>
                         <Route path="*" element={<NotFound />}/>
                     </Route>
-                    <Route path="*" elemment={<NotFound />}/>
+                    <Route path="*" element={<NotFound />}/>
                 </Route>
             </Routes>
         </BrowserRouter>);
