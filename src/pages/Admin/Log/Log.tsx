@@ -1,5 +1,5 @@
 const Log = () => {
-    return <></>;
+    return <>Log</>;
 }
 
 export default Log;

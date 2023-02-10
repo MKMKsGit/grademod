@@ -1,5 +1,5 @@
 const Honor = () => {
-    return <></>;
+    return <>Honor</>;
 }
 
 export default Honor;
