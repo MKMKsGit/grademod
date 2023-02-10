@@ -1,5 +1,5 @@
 const Management = () => {
-    return <></>;
+    return <>Management</>;
 }
 
 export default Management;

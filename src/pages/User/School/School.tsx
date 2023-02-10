@@ -1,5 +1,5 @@
 const School = () => {
-    return <></>;
+    return <>School</>;
 }
 
 export default School;
