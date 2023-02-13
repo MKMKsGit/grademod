@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "user": "User",
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "database": "Database",
+    "reports": {
+      "title": "Reports",
+      "oldSchool": "Old School",
+      "honor": "Honor",
+      "student": "Student"
+    },
+    "prediction": {
+      "title": "Predictions",
+      "honorRecieved": "Honor",
+      "status": "Status"
+    },
+    "profile": "My Profile",
+    "help": "Guide"
+  }
+}
