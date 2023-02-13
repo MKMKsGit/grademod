@@ -1,10 +1,4 @@
-import {
-  Divider,
-  Paper,
-  styled,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
+import { Paper, styled, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useState } from "react";
 
 //TODO: ตั้งให้เลือก list ได้ด้วย
