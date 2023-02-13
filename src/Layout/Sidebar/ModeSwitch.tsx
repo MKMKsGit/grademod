@@ -1,5 +1,6 @@
 import { Paper, styled, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router";
 
 //TODO: ตั้งให้เลือก list ได้ด้วย
 
@@ -33,13 +34,20 @@ const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
 
 const ModeSwitch = () => {
   const [mode, setMode] = useState("user");
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
 
   const handleModeChange = (
     event: React.MouseEvent<HTMLElement>,
     newMode: string
   ) => {
-    if (newMode) {
+    if (newMode && mode !== newMode) {
       setMode(newMode);
+      if (newMode === "user") {
+        navigate(`../user/${id}`, { replace: true });
+      } else {
+        navigate(`../user/${id}/admin`, { replace: true });
+      }
     }
   };
 
