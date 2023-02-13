@@ -42,16 +42,14 @@ const Sidebar = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  //TODO: เพิ่ม path ให้กับ index 5,6,10 และ 11
-
   const navigationList = [
     { index: 0, path: `../user/${id}` },
     { index: 1, path: `../user/${id}/database` },
     { index: 2, path: `../user/${id}/school` },
     { index: 3, path: `../user/${id}/honor` },
     { index: 4, path: `../user/${id}/student` },
-    { index: 5, path: `../user/${id}` },
-    { index: 6, path: `../user/${id}` },
+    { index: 5, path: `../user/${id}/honorStat` },
+    { index: 6, path: `../user/${id}/status` },
     { index: 7, path: `../user/${id}/admin/management` },
     { index: 8, path: `../user/${id}/admin/log` },
     { index: 9, path: `../user/${id}/profile` },
