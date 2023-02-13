@@ -1,4 +1,10 @@
-import { ListItemButton, ListItemIcon, Typography } from "@mui/material";
+import {
+  ListItemButton,
+  ListItemIcon,
+  Typography,
+  styled,
+} from "@mui/material";
+import { orange } from "@mui/material/colors";
 import { ListItemButtonProps } from "@mui/material/ListItemButton";
 
 interface ListItemProps {
@@ -6,6 +12,12 @@ interface ListItemProps {
   text: string;
   props?: ListItemButtonProps;
 }
+
+const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
+  "&.Mui-selected": {
+    backgroundColor: orange[50],
+  },
+}));
 
 export const ListItem = ({
   icon,
@@ -15,11 +27,11 @@ export const ListItem = ({
   props,
 }: ListItemProps & ListItemButtonProps) => {
   return (
-    <ListItemButton {...props} selected={selected} onClick={onClick}>
+    <StyledListItemButton {...props} selected={selected} onClick={onClick}>
       <ListItemIcon sx={{ minWidth: "36px" }}>{icon}</ListItemIcon>
       <Typography variant="body2" color="darkgray">
         {text}
       </Typography>
-    </ListItemButton>
+    </StyledListItemButton>
   );
 };

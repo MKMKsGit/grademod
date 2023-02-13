@@ -92,7 +92,7 @@ const Sidebar = () => {
               onClick={() => handleListItemClick(0)}
             />
             <ListItem
-              icon={<DatabaseIcon sx={{ color: "white" }} />}
+              icon={<DatabaseIcon sx={{ color: "transparent" }} />}
               text={t("database")}
               selected={selected === 1}
               onClick={() => handleListItemClick(1)}
@@ -116,7 +116,7 @@ const Sidebar = () => {
               onClick={() => handleListItemClick(3)}
             />
             <ListItem
-              icon={<StudentIcon sx={{ color: "white" }} />}
+              icon={<StudentIcon sx={{ color: "transparent" }} />}
               text={t("reports.student")}
               selected={selected === 4}
               onClick={() => handleListItemClick(4)}
@@ -163,7 +163,7 @@ const Sidebar = () => {
               onClick={() => handleListItemClick(7)}
             />
             <ListItem
-              icon={<LogIcon sx={{ color: "white" }} />}
+              icon={<LogIcon sx={{ color: "transparent" }} />}
               text={t("admin.control.log")}
               selected={selected === 8}
               onClick={() => handleListItemClick(8)}
@@ -176,7 +176,7 @@ const Sidebar = () => {
         {mode === "user" ? (
           <>
             <ListItem
-              icon={<UserIcon sx={{ color: "white" }} />}
+              icon={<UserIcon sx={{ color: "transparent" }} />}
               text={t("profile")}
               selected={selected === 9}
               onClick={() => handleListItemClick(9)}
