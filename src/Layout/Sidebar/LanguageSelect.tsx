@@ -5,7 +5,7 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const displayChoice = [
   { value: "th", label: "ภาษาไทย", pic: "TH.png" },
@@ -13,9 +13,9 @@ const displayChoice = [
 ];
 
 const LanguageSelect = () => {
-  const [language, setLanguage] = useState("th");
+  const { i18n } = useTranslation();
   const handleChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value);
+    i18n.changeLanguage(event.target.value);
   };
   return (
     <FormControl fullWidth size="small">
@@ -38,7 +38,7 @@ const LanguageSelect = () => {
           },
         }}
         onChange={handleChange}
-        value={language}
+        value={i18n.language}
         displayEmpty
         renderValue={(value) => {
           const selected = displayChoice.find(

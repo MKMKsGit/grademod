@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { Box, Divider, List, ListSubheader } from "@mui/material";
 import { ListItem } from "./ListItem";
 import ModeSwitch from "./ModeSwitch";
@@ -29,6 +31,7 @@ const StyledSubheader = ({ text }: { text: string }) => {
 };
 
 const Sidebar = () => {
+  const { t } = useTranslation("sidebar");
   return (
     <Box
       sx={{
@@ -50,54 +53,54 @@ const Sidebar = () => {
       <List component="nav" aria-label="mainpage and database">
         <ListItem
           icon={<DashboardIcon sx={{ color: "darkgray" }} />}
-          text="หน้าหลัก"
+          text={t("dashboard")}
         />
         <ListItem
           icon={<DatabaseIcon sx={{ color: "white" }} />}
-          text="ฐานข้อมูล"
+          text={t("database")}
         />
       </List>
       <List
         component="nav"
         aria-label="reports"
-        subheader={<StyledSubheader text="รายงานสรุป" />}
+        subheader={<StyledSubheader text={t("reports.title")} />}
       >
         <ListItem
           icon={<SchoolIcon sx={{ color: "darkgray" }} />}
-          text="สถานศึกษาก่อนรับเข้า"
+          text={t("reports.oldSchool")}
         />
         <ListItem
           icon={<HonorIcon sx={{ color: "darkgray" }} />}
-          text="เกียรตินิยม"
+          text={t("reports.honor")}
         />
         <ListItem
           icon={<StudentIcon sx={{ color: "white" }} />}
-          text="นักศึกษารายบุคคล"
+          text={t("reports.student")}
         />
       </List>
       <List
         component="nav"
         aria-label="predict"
-        subheader={<StyledSubheader text="การพยากรณ์" />}
+        subheader={<StyledSubheader text={t("prediction.title")} />}
       >
         <ListItem
           icon={<StarIcon sx={{ color: "darkgray" }} />}
-          text="การได้รับเกียรตินิยม"
+          text={t("prediction.honorRecieved")}
         />
         <ListItem
           icon={<NotebookIcon sx={{ color: "darkgray" }} />}
-          text="สถานภาพทางการศึกษา"
+          text={t("prediction.status")}
         />
       </List>
       <Divider />
       <List component="nav" aria-label="profiles">
         <ListItem
           icon={<UserIcon sx={{ color: "white" }} />}
-          text="โปรไฟล์ของฉัน"
+          text={t("profile")}
         />
         <ListItem
           icon={<HelpOutlineIcon sx={{ color: "darkgray" }} />}
-          text="คู่มือการใช้งาน"
+          text={t("help")}
         />
         <LanguageSelect />
       </List>
