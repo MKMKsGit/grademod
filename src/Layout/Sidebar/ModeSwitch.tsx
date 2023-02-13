@@ -34,9 +34,11 @@ const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
 const ModeSwitch = ({
   mode,
   setMode,
+  setSelected,
 }: {
   mode: string;
   setMode: React.Dispatch<React.SetStateAction<string>>;
+  setSelected: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -49,8 +51,10 @@ const ModeSwitch = ({
       setMode(newMode);
       if (newMode === "user") {
         navigate(`../user/${id}`, { replace: true });
+        setSelected(0);
       } else {
         navigate(`../user/${id}/admin`, { replace: true });
+        setSelected(12);
       }
     }
   };

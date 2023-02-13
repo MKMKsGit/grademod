@@ -18,6 +18,7 @@ import LanguageSelect from "./LanguageSelect";
 
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import LogIcon from "assets/icons/LogIcon";
+import { useNavigate, useParams } from "react-router";
 
 const StyledSubheader = ({ text }: { text: string }) => {
   return (
@@ -36,7 +37,35 @@ const StyledSubheader = ({ text }: { text: string }) => {
 
 const Sidebar = () => {
   const [mode, setMode] = useState("user");
+  const [selected, setSelected] = useState(0);
   const { t } = useTranslation("sidebar");
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+
+  //TODO: เพิ่ม path ให้กับ index 5,6,10 และ 11
+
+  const navigationList = [
+    { index: 0, path: `../user/${id}` },
+    { index: 1, path: `../user/${id}/database` },
+    { index: 2, path: `../user/${id}/school` },
+    { index: 3, path: `../user/${id}/honor` },
+    { index: 4, path: `../user/${id}/student` },
+    { index: 5, path: `../user/${id}` },
+    { index: 6, path: `../user/${id}` },
+    { index: 7, path: `../user/${id}/admin/management` },
+    { index: 8, path: `../user/${id}/admin/log` },
+    { index: 9, path: `../user/${id}/profile` },
+    { index: 10, path: `../user/${id}/help` },
+    { index: 11, path: `../user/${id}/admin/help` },
+    { index: 12, path: `../user/${id}/admin` },
+  ];
+
+  const handleListItemClick = (index: number) => {
+    setSelected(index);
+    const data = navigationList[index];
+    navigate(data.path, { replace: true });
+  };
+
   return (
     <Box
       sx={{
@@ -54,17 +83,21 @@ const Sidebar = () => {
         width="100%"
         height="auto"
       />
-      <ModeSwitch mode={mode} setMode={setMode} />
+      <ModeSwitch mode={mode} setMode={setMode} setSelected={setSelected} />
       {mode === "user" ? (
         <>
           <List component="nav" aria-label="mainpage and database">
             <ListItem
               icon={<DashboardIcon sx={{ color: "darkgray" }} />}
               text={t("dashboard")}
+              selected={selected === 0}
+              onClick={() => handleListItemClick(0)}
             />
             <ListItem
               icon={<DatabaseIcon sx={{ color: "white" }} />}
               text={t("database")}
+              selected={selected === 1}
+              onClick={() => handleListItemClick(1)}
             />
           </List>
           <List
@@ -75,14 +108,20 @@ const Sidebar = () => {
             <ListItem
               icon={<SchoolIcon sx={{ color: "darkgray" }} />}
               text={t("reports.oldSchool")}
+              selected={selected === 2}
+              onClick={() => handleListItemClick(2)}
             />
             <ListItem
               icon={<HonorIcon sx={{ color: "darkgray" }} />}
               text={t("reports.honor")}
+              selected={selected === 3}
+              onClick={() => handleListItemClick(3)}
             />
             <ListItem
               icon={<StudentIcon sx={{ color: "white" }} />}
               text={t("reports.student")}
+              selected={selected === 4}
+              onClick={() => handleListItemClick(4)}
             />
           </List>
           <List
@@ -93,10 +132,14 @@ const Sidebar = () => {
             <ListItem
               icon={<StarIcon sx={{ color: "darkgray" }} />}
               text={t("prediction.honorRecieved")}
+              selected={selected === 5}
+              onClick={() => handleListItemClick(5)}
             />
             <ListItem
               icon={<NotebookIcon sx={{ color: "darkgray" }} />}
               text={t("prediction.status")}
+              selected={selected === 6}
+              onClick={() => handleListItemClick(6)}
             />
           </List>
         </>
@@ -106,6 +149,8 @@ const Sidebar = () => {
             <ListItem
               icon={<DashboardIcon sx={{ color: "darkgray" }} />}
               text={t("dashboard")}
+              selected={selected === 12}
+              onClick={() => handleListItemClick(12)}
             />
           </List>
           <List
@@ -116,10 +161,14 @@ const Sidebar = () => {
             <ListItem
               icon={<SupervisedUserCircleIcon sx={{ color: "darkgray" }} />}
               text={t("admin.control.management")}
+              selected={selected === 7}
+              onClick={() => handleListItemClick(7)}
             />
             <ListItem
               icon={<LogIcon sx={{ color: "white" }} />}
               text={t("admin.control.log")}
+              selected={selected === 8}
+              onClick={() => handleListItemClick(8)}
             />
           </List>
         </>
@@ -131,16 +180,22 @@ const Sidebar = () => {
             <ListItem
               icon={<UserIcon sx={{ color: "white" }} />}
               text={t("profile")}
+              selected={selected === 9}
+              onClick={() => handleListItemClick(9)}
             />
             <ListItem
               icon={<HelpOutlineIcon sx={{ color: "darkgray" }} />}
               text={t("help")}
+              selected={selected === 10}
+              onClick={() => handleListItemClick(10)}
             />
           </>
         ) : (
           <ListItem
             icon={<HelpOutlineIcon sx={{ color: "darkgray" }} />}
             text={t("help")}
+            selected={selected === 11}
+            onClick={() => handleListItemClick(11)}
           />
         )}
         <LanguageSelect />
