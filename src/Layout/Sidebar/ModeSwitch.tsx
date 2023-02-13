@@ -1,7 +1,13 @@
-import { Paper, styled, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import {
+  Divider,
+  Paper,
+  styled,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
 import { useState } from "react";
 
-//TODO: แก้ไม่ให้เอาออกได้ (ต้องเลือก 1 อัน)
+//TODO: ตั้งให้เลือก list ได้ด้วย
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   "& .MuiToggleButtonGroup-grouped": {
@@ -11,12 +17,13 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
       border: 0,
     },
     "&:not(:first-of-type)": {
-      borderRadius: theme.shape.borderRadius,
+      borderRadius: "8px",
     },
     "&:first-of-type": {
-      borderRadius: theme.shape.borderRadius,
+      borderRadius: "8px",
     },
   },
+  gap: "8px",
 }));
 
 const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
@@ -37,20 +44,18 @@ const ModeSwitch = () => {
     event: React.MouseEvent<HTMLElement>,
     newMode: string
   ) => {
-    setMode(newMode);
+    if (newMode) {
+      setMode(newMode);
+    }
   };
 
   return (
     <Paper
       elevation={0}
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        mx: 4,
-        my: 2,
-        px: 1.5,
-        py: 0.5,
+        p: 1,
         backgroundColor: "lightgray",
+        borderRadius: "8px",
       }}
     >
       <StyledToggleButtonGroup
