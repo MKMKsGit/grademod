@@ -1,7 +1,7 @@
-import '@fontsource/noto-sans-thai';
-import { ThemeProvider } from '@mui/material';
-import { MyTheme } from './MyTheme';
-import MyRoutes from './Routes';
+import "@fontsource/noto-sans-thai";
+import { ThemeProvider } from "@mui/material";
+import { MyTheme } from "./MyTheme";
+import MyRoutes from "./Routes";
 
 function App() {
   return (

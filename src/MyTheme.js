@@ -3,30 +3,30 @@ import { createTheme } from "@mui/material";
 const font = "'Noto Sans Thai', sans-serif";
 
 export const MyTheme = createTheme({
-    palette: {
-        primary: {
-            main: "#4a60ac",
-        },
-        secondary: {
-            main: "#f15624",
-        },
-        error: {
-            main: "#ff4242"
-        },
-        lightblue: {
-            main: "#80a8d9"
-        },
-        yellow: {
-            main: "#fcb43e"
-        },
-        white: {
-            main: "#ffffff"
-        },
-        black: {
-            main: "#000000"
-        }
+  spacing: 4,
+  palette: {
+    primary: {
+      main: "#4a60ac",
     },
-    typography: {
-        fontFamily: font,
+    secondary: {
+      main: "#f15624",
     },
-})
+    error: {
+      main: "#ff4242",
+    },
+    lightblue: {
+      main: "#80a8d9",
+    },
+    orange: "#f3722c",
+    yellow: "#fcb43e",
+    white: "#ffffff",
+    black: "#000000",
+    lightgray: "#ebebeb",
+    gray: "#b0b0b0",
+    darkgray: "#5f6368",
+    superlightgray: "#f5f5f5",
+  },
+  typography: {
+    fontFamily: font,
+  },
+});
