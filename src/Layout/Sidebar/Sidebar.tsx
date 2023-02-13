@@ -30,7 +30,22 @@ const StyledSubheader = ({ text }: { text: string }) => {
 
 const Sidebar = () => {
   return (
-    <Box sx={{ height: "100%", width: "206px", bgcolor: "Background.paper" }}>
+    <Box
+      sx={{
+        height: "100%",
+        width: "206px",
+        display: "flex",
+        flexDirection: "column",
+        margin: "24px 12px",
+        gap: "20px",
+      }}
+    >
+      <img
+        src={require("assets/logo.png")}
+        alt="logo"
+        width="100%"
+        height="auto"
+      />
       <ModeSwitch />
       <List component="nav" aria-label="mainpage and database">
         <ListItem
