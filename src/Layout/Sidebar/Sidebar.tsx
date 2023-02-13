@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 import { Box, Divider, List, ListSubheader } from "@mui/material";
 import { ListItem } from "./ListItem";
@@ -14,6 +15,9 @@ import StudentIcon from "assets/icons/StudentIcon";
 import NotebookIcon from "assets/icons/NotebookIcon";
 import UserIcon from "assets/icons/UserIcon";
 import LanguageSelect from "./LanguageSelect";
+
+import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
+import LogIcon from "assets/icons/LogIcon";
 
 const StyledSubheader = ({ text }: { text: string }) => {
   return (
@@ -31,6 +35,7 @@ const StyledSubheader = ({ text }: { text: string }) => {
 };
 
 const Sidebar = () => {
+  const [mode, setMode] = useState("user");
   const { t } = useTranslation("sidebar");
   return (
     <Box
@@ -49,59 +54,95 @@ const Sidebar = () => {
         width="100%"
         height="auto"
       />
-      <ModeSwitch />
-      <List component="nav" aria-label="mainpage and database">
-        <ListItem
-          icon={<DashboardIcon sx={{ color: "darkgray" }} />}
-          text={t("dashboard")}
-        />
-        <ListItem
-          icon={<DatabaseIcon sx={{ color: "white" }} />}
-          text={t("database")}
-        />
-      </List>
-      <List
-        component="nav"
-        aria-label="reports"
-        subheader={<StyledSubheader text={t("reports.title")} />}
-      >
-        <ListItem
-          icon={<SchoolIcon sx={{ color: "darkgray" }} />}
-          text={t("reports.oldSchool")}
-        />
-        <ListItem
-          icon={<HonorIcon sx={{ color: "darkgray" }} />}
-          text={t("reports.honor")}
-        />
-        <ListItem
-          icon={<StudentIcon sx={{ color: "white" }} />}
-          text={t("reports.student")}
-        />
-      </List>
-      <List
-        component="nav"
-        aria-label="predict"
-        subheader={<StyledSubheader text={t("prediction.title")} />}
-      >
-        <ListItem
-          icon={<StarIcon sx={{ color: "darkgray" }} />}
-          text={t("prediction.honorRecieved")}
-        />
-        <ListItem
-          icon={<NotebookIcon sx={{ color: "darkgray" }} />}
-          text={t("prediction.status")}
-        />
-      </List>
+      <ModeSwitch mode={mode} setMode={setMode} />
+      {mode === "user" ? (
+        <>
+          <List component="nav" aria-label="mainpage and database">
+            <ListItem
+              icon={<DashboardIcon sx={{ color: "darkgray" }} />}
+              text={t("dashboard")}
+            />
+            <ListItem
+              icon={<DatabaseIcon sx={{ color: "white" }} />}
+              text={t("database")}
+            />
+          </List>
+          <List
+            component="nav"
+            aria-label="reports"
+            subheader={<StyledSubheader text={t("reports.title")} />}
+          >
+            <ListItem
+              icon={<SchoolIcon sx={{ color: "darkgray" }} />}
+              text={t("reports.oldSchool")}
+            />
+            <ListItem
+              icon={<HonorIcon sx={{ color: "darkgray" }} />}
+              text={t("reports.honor")}
+            />
+            <ListItem
+              icon={<StudentIcon sx={{ color: "white" }} />}
+              text={t("reports.student")}
+            />
+          </List>
+          <List
+            component="nav"
+            aria-label="predict"
+            subheader={<StyledSubheader text={t("prediction.title")} />}
+          >
+            <ListItem
+              icon={<StarIcon sx={{ color: "darkgray" }} />}
+              text={t("prediction.honorRecieved")}
+            />
+            <ListItem
+              icon={<NotebookIcon sx={{ color: "darkgray" }} />}
+              text={t("prediction.status")}
+            />
+          </List>
+        </>
+      ) : (
+        <>
+          <List component="nav" aria-label="mainpage and database">
+            <ListItem
+              icon={<DashboardIcon sx={{ color: "darkgray" }} />}
+              text={t("dashboard")}
+            />
+          </List>
+          <List
+            component="nav"
+            aria-label="predict"
+            subheader={<StyledSubheader text={t("admin.control.title")} />}
+          >
+            <ListItem
+              icon={<SupervisedUserCircleIcon sx={{ color: "darkgray" }} />}
+              text={t("admin.control.management")}
+            />
+            <ListItem
+              icon={<LogIcon sx={{ color: "white" }} />}
+              text={t("admin.control.log")}
+            />
+          </List>
+        </>
+      )}
       <Divider />
       <List component="nav" aria-label="profiles">
-        <ListItem
-          icon={<UserIcon sx={{ color: "white" }} />}
-          text={t("profile")}
-        />
-        <ListItem
-          icon={<HelpOutlineIcon sx={{ color: "darkgray" }} />}
-          text={t("help")}
-        />
+        {mode === "user" ? (
+          <>
+            <ListItem
+              icon={<UserIcon sx={{ color: "white" }} />}
+              text={t("profile")}
+            />
+            <ListItem
+              icon={<HelpOutlineIcon sx={{ color: "darkgray" }} />}
+              text={t("help")}
+            />
+          </>
+        ) : (
+          <ListItem
+            icon={<HelpOutlineIcon sx={{ color: "darkgray" }} />}
+            text={t("help")}
+          />
+        )}
         <LanguageSelect />
       </List>
     </Box>

@@ -13,5 +13,12 @@
     "status": "Status"
   },
   "profile": "My Profile",
-  "help": "Guide"
+  "help": "Guide",
+  "admin": {
+    "control": {
+      "title": "Control",
+      "management": "User Management",
+      "log": "User Log"
+    }
+  }
 }

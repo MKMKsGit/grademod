@@ -1,5 +1,4 @@
 import { Paper, styled, ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 //TODO: ตั้งให้เลือก list ได้ด้วย
@@ -32,8 +31,13 @@ const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
   },
 }));
 
-const ModeSwitch = () => {
-  const [mode, setMode] = useState("user");
+const ModeSwitch = ({
+  mode,
+  setMode,
+}: {
+  mode: string;
+  setMode: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
