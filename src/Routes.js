@@ -18,6 +18,7 @@ import Management from "./pages/Admin/Management";
 import { default as AdminHelp } from "./pages/Admin/Help";
 import HonorStat from "pages/User/HonorStat";
 import Status from "pages/User/Status";
+import Register from "pages/Register";
 
 const MyRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const MyRoutes = () => {
       <Routes>
         <Route path="/">
           <Route index element={<Landing />} />
+          <Route path="register" element={<Register />} />
           <Route path="forgetpassword" element={<Password />} />
           <Route path="user/:id/" element={<Layout />}>
             <Route index element={<UserDashboard />} />
