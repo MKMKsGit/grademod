@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import Password from "./pages/Landing/Password";
 import NotFound from "./pages/NotFound";
 import Layout from "./Layout";
 
@@ -27,7 +26,6 @@ const MyRoutes = () => {
         <Route path="/">
           <Route index element={<Landing />} />
           <Route path="register" element={<Register />} />
-          <Route path="forgetpassword" element={<Password />} />
           <Route path="user/:id/" element={<Layout />}>
             <Route index element={<UserDashboard />} />
             <Route path="database" element={<Database />} />
