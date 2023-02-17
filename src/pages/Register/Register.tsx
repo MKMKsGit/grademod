@@ -8,8 +8,10 @@ import {
   Typography,
 } from "@mui/material";
 import LanguageSelect from "Layout/Sidebar/LanguageSelect";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 const Register = () => {
+  const { t } = useTranslation("register");
   return (
     <Box
       minWidth="100%"
@@ -37,65 +39,65 @@ const Register = () => {
           <Grid container minWidth="640px" spacing={12}>
             <Grid item xs={6} display="flex" flexDirection="column" gap="16px">
               <Box>
-                <Typography variant="h5">User Information</Typography>
+                <Typography variant="h5">{t("left.description")}</Typography>
                 <Typography variant="body2" color="gray">
-                  Please fill in your information
+                  {t("left.helper")}
                 </Typography>
               </Box>
               <TextField
                 required
                 id="firstName"
                 name="firstName"
-                label="First name"
+                label={t("left.firstName")}
                 fullWidth
               />
               <TextField
                 required
                 id="lastName"
                 name="lastName"
-                label="Last name"
+                label={t("left.lastName")}
                 fullWidth
               />
               <TextField
                 required
                 id="employeeID"
                 name="employeeID"
-                label="Employee / Student ID"
+                label={t("left.employeeID")}
                 fullWidth
               />
               <TextField
                 id="telephone"
                 name="telephone"
-                label="Telephone"
+                label={t("left.telephone")}
                 fullWidth
               />
             </Grid>
             <Grid item xs={6} display="flex" flexDirection="column" gap="16px">
               <Box>
-                <Typography variant="h5">Login Information</Typography>
+                <Typography variant="h5">{t("right.description")}</Typography>
                 <Typography variant="body2" color="gray">
-                  Please fill in to create account
+                  {t("right.helper")}
                 </Typography>
               </Box>
               <TextField
                 required
                 id="email"
                 name="email"
-                label="Email"
+                label={t("right.email")}
                 fullWidth
               />
               <TextField
                 required
                 id="password"
                 name="password"
-                label="Password"
+                label={t("right.password")}
                 fullWidth
               />
               <TextField
                 required
                 id="confirmpassword"
                 name="confirmpassword"
-                label="Confirm Password"
+                label={t("right.confirmPassword")}
                 fullWidth
               />
             </Grid>
@@ -107,10 +109,10 @@ const Register = () => {
           sx={{ width: "100%" }}
           size="large"
         >
-          Register
+          {t("register")}
         </Button>
         <Typography color="primary" variant="body2">
-          Already have an account? <Link to="/">Login</Link>
+          {t("account")} <Link to="/">{t("login")}</Link>
         </Typography>
       </Paper>
     </Box>
