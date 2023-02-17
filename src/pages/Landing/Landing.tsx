@@ -1,10 +1,12 @@
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 import LandingPic from "assets/pics/landing.svg";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [changePassword, setChangePassword] = useState(true);
+  const { t, i18n } = useTranslation("login");
   return (
     <Box
       display="flex"
@@ -17,10 +19,26 @@ const Landing = () => {
       <img alt="landing pic" src={LandingPic} width="675px" />
       <Box display="flex" flexDirection="column">
         <img alt="logo pic" src={require("assets/logo.png")} width="286px" />
+        <Box
+          width="100%"
+          display="flex"
+          justifyContent="center"
+          onClick={() => {
+            i18n.changeLanguage(i18n.language === "th" ? "en" : "th");
+          }}
+        >
+          <Typography
+            variant="subtitle2"
+            color="primary"
+            sx={{ textDecoration: "underline", cursor: "pointer" }}
+          >
+            {t("changeLanguage")}
+          </Typography>
+        </Box>
         {changePassword ? (
           <FormControl sx={{ mt: 10, width: "100%", gap: 4 }}>
-            <TextField required label="Email" variant="outlined" />
-            <TextField required label="Password" variant="outlined" />
+            <TextField required label={t("email")} variant="outlined" />
+            <TextField required label={t("password")} variant="outlined" />
             <Box width="100%" display="flex" justifyContent="flex-end">
               <Box
                 onClick={() => {
@@ -32,26 +50,24 @@ const Landing = () => {
                   color="primary"
                   sx={{ textDecoration: "underline", cursor: "pointer" }}
                 >
-                  forget password?
+                  {t("forgotPassword")}
                 </Typography>
               </Box>
             </Box>
             <Button variant="contained" sx={{ width: "100%" }} size="large">
-              Login
+              {t("login")}
             </Button>
             <Box width="100%" display="flex" justifyContent="center">
               <Link to="/register">
-                <Typography variant="body2">
-                  Not Member? Click me to register!
-                </Typography>
+                <Typography variant="body2">{t("register")}</Typography>
               </Link>
             </Box>
           </FormControl>
         ) : (
           <FormControl sx={{ mt: 10, width: "100%", gap: 4 }}>
-            <TextField required label="Email" variant="outlined" />
+            <TextField required label={t("email")} variant="outlined" />
             <Button variant="contained" sx={{ width: "100%" }} size="large">
-              send
+              {t("send")}
             </Button>
             <Box
               width="100%"
@@ -66,7 +82,7 @@ const Landing = () => {
                 color="primary"
                 sx={{ textDecoration: "underline", cursor: "pointer" }}
               >
-                Go back
+                {t("back")}
               </Typography>
             </Box>
           </FormControl>
