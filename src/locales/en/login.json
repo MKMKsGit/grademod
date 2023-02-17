@@ -1,0 +1,10 @@
+{
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "forgotPassword": "forget password",
+  "register": "Not Member? Click me to register!",
+  "changeLanguage": "คลิกเพื่อเปลี่ยนภาษา",
+  "send": "Send new password to this email",
+  "back": "Go Back"
+}

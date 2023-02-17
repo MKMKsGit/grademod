@@ -1,0 +1,10 @@
+{
+  "email": "อีเมลล์",
+  "password": "รหัสผ่าน",
+  "login": "เข้าสู่ระบบ",
+  "forgotPassword": "ลืมรหัสผ่าน",
+  "register": "สมัครสมาชิก",
+  "changeLanguage": "Change to English",
+  "send": "ส่งข้อมูลเพื่อขอรหัสผ่านใหม่",
+  "back": "ย้อนกลับ"
+}
