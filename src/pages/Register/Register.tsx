@@ -32,7 +32,7 @@ const Register = () => {
         }}
       >
         <img src={require("assets/logo.png")} alt="logo" />
-        <Box>
+        <Box sx={{ cursor: "pointer" }}>
           <LanguageSelect />
         </Box>
         <FormControl>
