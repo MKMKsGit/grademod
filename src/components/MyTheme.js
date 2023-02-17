@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material";
+import { buttonTheme } from "./Button";
+import { textFieldTheme } from "./TextField";
 
 const font = "'Noto Sans Thai', sans-serif";
 
@@ -28,5 +30,9 @@ export const MyTheme = createTheme({
   },
   typography: {
     fontFamily: font,
+  },
+  components: {
+    ...buttonTheme.components,
+    ...textFieldTheme.components,
   },
 });

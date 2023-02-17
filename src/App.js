@@ -1,6 +1,6 @@
 import "@fontsource/noto-sans-thai";
 import { ThemeProvider } from "@mui/material";
-import { MyTheme } from "./MyTheme";
+import { MyTheme } from "components/MyTheme";
 import MyRoutes from "./Routes";
 
 function App() {

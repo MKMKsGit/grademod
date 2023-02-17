@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const [changePassword, setChangePassword] = useState(false);
+  const [changePassword, setChangePassword] = useState(true);
   return (
     <Box
       display="flex"
