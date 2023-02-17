@@ -8,7 +8,7 @@ const Landing = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      height={{ xs: "100vh", sm: "100vh", md: "100vh", lg: "100vh" }}
+      height="100vh"
       m="0 auto"
       gap="100px"
     >
