@@ -1,0 +1,33 @@
+{
+  "title": "Dashboard",
+  "totalStudent": "Total Student",
+  "probation": {
+    "main": "Total Probation Status",
+    "description": "in this academic year"
+  },
+  "studentUnit": "persons",
+  "compare": "comparing with previous academic year",
+  "honorRatio": {
+    "main": "Honor recieved ratio",
+    "description": "from all graduted student in this academic year",
+    "from": "from"
+  },
+  "honorPrediction": {
+    "main": "Honor Prediction Feature",
+    "description": "per Student, Reference by Admit Data"
+  },
+  "charts": {
+    "first": "Bar chart for total admit student separate by old school",
+    "second": "Bar chart for total student that recieved honor degree",
+    "description": "group by old school's type"
+  },
+  "geo": {
+    "main": "Geological Chart",
+    "description": "show total admit from old school's place",
+    "visual": {
+      "main": "Visualization",
+      "province": "Province",
+      "region": "Region"
+    }
+  }
+}
