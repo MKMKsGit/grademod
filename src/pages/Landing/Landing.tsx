@@ -2,11 +2,12 @@ import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 import LandingPic from "assets/pics/landing.svg";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Landing = () => {
   const [changePassword, setChangePassword] = useState(true);
   const { t, i18n } = useTranslation("login");
+  const navigate = useNavigate();
   return (
     <Box
       display="flex"
@@ -54,7 +55,12 @@ const Landing = () => {
                 </Typography>
               </Box>
             </Box>
-            <Button variant="contained" sx={{ width: "100%" }} size="large">
+            <Button
+              onClick={() => navigate("/user/1")}
+              variant="contained"
+              sx={{ width: "100%" }}
+              size="large"
+            >
               {t("login")}
             </Button>
             <Box width="100%" display="flex" justifyContent="center">

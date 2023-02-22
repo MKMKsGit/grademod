@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
-import { Box, Divider, List, ListSubheader } from "@mui/material";
+import { Box, Button, Divider, List, ListSubheader } from "@mui/material";
 import { ListItem } from "./ListItem";
 import ModeSwitch from "./ModeSwitch";
 
@@ -15,6 +15,7 @@ import StudentIcon from "assets/icons/StudentIcon";
 import NotebookIcon from "assets/icons/NotebookIcon";
 import UserIcon from "assets/icons/UserIcon";
 import LanguageSelect from "./LanguageSelect";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import LogIcon from "assets/icons/LogIcon";
@@ -198,6 +199,13 @@ const Sidebar = () => {
         )}
         <LanguageSelect />
       </List>
+      <Button
+        variant="contained"
+        sx={{ mx: 4, my: 2 }}
+        startIcon={<LogoutIcon />}
+      >
+        {t("signout")}
+      </Button>
     </Box>
   );
 };

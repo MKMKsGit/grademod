@@ -21,8 +21,8 @@ const LanguageSelect = () => {
     <Select
       size="small"
       sx={{
-        mx: 4,
-        my: 2,
+        ml: 4,
+        mt: 2,
         color: "primary.main",
         ".MuiOutlinedInput-notchedOutline": {
           borderColor: "primary.main",

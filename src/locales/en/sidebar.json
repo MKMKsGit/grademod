@@ -20,5 +20,6 @@
       "management": "User Management",
       "log": "User Log"
     }
-  }
+  },
+  "signout": "sign out"
 }
