@@ -1,0 +1,20 @@
+{
+  "academicYear": "Academic Year",
+  "schoolType": {
+    "main": "Old School Type",
+    "choices": {
+      "all": "All Types",
+      "general": "General School",
+      "inter": "International School",
+      "vocational": "Vocational School",
+      "foreign": "Foreign"
+    }
+  },
+  "program": {
+    "main": "Program",
+    "choices": {
+      "all": "All Programs"
+    }
+  },
+  "addFilter": "Add Filter"
+}
