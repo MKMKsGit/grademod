@@ -13,6 +13,9 @@ export const MyTheme = createTheme({
     secondary: {
       main: "#f15624",
     },
+    success: {
+      main: "#6BC684",
+    },
     error: {
       main: "#ff4242",
     },
@@ -31,9 +34,45 @@ export const MyTheme = createTheme({
   },
   typography: {
     fontFamily: font,
-    subtitle2: {
+    h1: {
+      fontSize: 40,
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: 32,
+      fontWeight: 600,
+    },
+    h3: {
+      fontSize: 28,
+      fontWeight: 600,
+    },
+    h4: {
+      fontSize: 24,
+      fontWeight: 600,
+    },
+    h5: {
+      fontSize: 20,
+      fontWeight: 600,
+    },
+    h6: {
+      fontSize: 16,
+      fontWeight: 600,
+    },
+    body1: {
+      fontSize: 16,
+      fontWeight: 400,
+    },
+    body2: {
       fontSize: 14,
       fontWeight: 400,
+    },
+    subtitle1: {
+      fontSize: 16,
+      fontWeight: 300,
+    },
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 300,
     },
   },
   components: {
@@ -44,6 +83,8 @@ export const MyTheme = createTheme({
         root: {
           borderRadius: 12,
           padding: 16,
+          width: "100%",
+          height: "100%",
         },
       },
     },
