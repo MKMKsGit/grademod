@@ -27,12 +27,25 @@ export const MyTheme = createTheme({
     lightgray: "#ebebeb",
     gray: "#b0b0b0",
     darkgray: "#5f6368",
+    superdarkgray: "#3c4043",
   },
   typography: {
     fontFamily: font,
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 400,
+    },
   },
   components: {
     ...buttonTheme.components,
     ...textFieldTheme.components,
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          padding: 16,
+        },
+      },
+    },
   },
 });
