@@ -1,5 +1,7 @@
 import { MyTheme } from "../src/components/MyTheme";
 import { ThemeProvider } from "@mui/material";
+import "@mui/icons-material";
+import "../src/i18n";
 
 import "@fontsource/material-icons";
 import "@fontsource/noto-sans-thai";
