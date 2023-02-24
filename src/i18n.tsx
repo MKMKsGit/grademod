@@ -3,6 +3,9 @@ import { initReactI18next } from "react-i18next";
 
 import sidebarEnglish from "./locales/en/sidebar.json";
 import sidebarThai from "./locales/th/sidebar.json";
+import filterEnglish from "./locales/en/filter.json";
+import filterThai from "./locales/th/filter.json";
+
 import registerEnglish from "./locales/en/register.json";
 import registerThai from "./locales/th/register.json";
 import loginEnglish from "./locales/en/login.json";
@@ -12,12 +15,14 @@ import userDashboardThai from "./locales/th/userDashboard.json";
 
 const resources = {
   en: {
+    filter: filterEnglish,
     sidebar: sidebarEnglish,
     register: registerEnglish,
     login: loginEnglish,
     userDashboard: userDashboardEnglish,
   },
   th: {
+    filter: filterThai,
     sidebar: sidebarThai,
     register: registerThai,
     login: loginThai,
