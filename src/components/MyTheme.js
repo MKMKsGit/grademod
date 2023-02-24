@@ -23,16 +23,29 @@ export const MyTheme = createTheme({
     yellow: "#fcb43e",
     white: "#ffffff",
     black: "#000000",
+    superlightgray: "#f5f5f5",
     lightgray: "#ebebeb",
     gray: "#b0b0b0",
     darkgray: "#5f6368",
-    superlightgray: "#f5f5f5",
+    superdarkgray: "#3c4043",
   },
   typography: {
     fontFamily: font,
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 400,
+    },
   },
   components: {
     ...buttonTheme.components,
     ...textFieldTheme.components,
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          padding: 16,
+        },
+      },
+    },
   },
 });
