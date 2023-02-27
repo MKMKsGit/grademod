@@ -197,15 +197,20 @@ const Sidebar = () => {
             onClick={() => handleListItemClick(11)}
           />
         )}
-        <LanguageSelect />
       </List>
-      <Button
-        variant="contained"
-        sx={{ mx: 4, my: 2 }}
-        startIcon={<LogoutIcon />}
-      >
-        {t("signout")}
-      </Button>
+      <Box display="flex" flexDirection="column" width="80%">
+        <LanguageSelect />
+        <Button
+          variant="contained"
+          sx={{ ml: 4, my: 2, borderRadius: "4px", px: 5 }}
+          startIcon={<LogoutIcon />}
+          onClick={() => {
+            navigate("/", { replace: true });
+          }}
+        >
+          {t("signout")}
+        </Button>
+      </Box>
     </Box>
   );
 };
