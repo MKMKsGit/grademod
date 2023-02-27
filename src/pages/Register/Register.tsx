@@ -35,7 +35,14 @@ const Register = () => {
         <Box sx={{ cursor: "pointer" }}>
           <LanguageSelect />
         </Box>
-        <FormControl>
+        <FormControl 
+        sx={{
+          gap: "24px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          borderRadius: "20px",
+        }}>
           <Grid container minWidth="640px" spacing={12}>
             <Grid item xs={6} display="flex" flexDirection="column" gap="16px">
               <Box>
@@ -63,12 +70,6 @@ const Register = () => {
                 id="employeeID"
                 name="employeeID"
                 label={t("left.employeeID")}
-                fullWidth
-              />
-              <TextField
-                id="telephone"
-                name="telephone"
-                label={t("left.telephone")}
                 fullWidth
               />
             </Grid>
@@ -102,18 +103,20 @@ const Register = () => {
               />
             </Grid>
           </Grid>
-        </FormControl>
+          <Box>
         <Button
           color="primary"
           variant="contained"
-          sx={{ width: "100%" }}
+          fullWidth
           size="large"
         >
           {t("register")}
         </Button>
-        <Typography color="primary" variant="body2">
+        <Typography mt={2} color="primary" variant="body2">
           {t("account")} <Link to="/">{t("login")}</Link>
         </Typography>
+        </Box>
+        </FormControl>
       </Paper>
     </Box>
   );

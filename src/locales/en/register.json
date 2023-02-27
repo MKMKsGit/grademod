@@ -4,8 +4,7 @@
     "helper": "Please fill in your information",
     "firstName": "First Name",
     "lastName": "Last Name",
-    "employeeID": "Employee ID",
-    "telephone": "Telephone"
+    "employeeID": "Employee ID"
   },
   "right": {
     "description": "Login Information",
