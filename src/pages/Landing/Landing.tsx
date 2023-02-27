@@ -3,6 +3,8 @@ import LandingPic from "assets/pics/landing.svg";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
+import { APP_BAR_HEIGHT } from "pages/Register";
+import LanguageSelect from "Layout/Sidebar/LanguageSelect";
 
 const Landing = () => {
   const [changePassword, setChangePassword] = useState(true);
@@ -17,25 +19,20 @@ const Landing = () => {
       m="0 auto"
       gap="100px"
     >
+      <Box
+        sx={{
+          height: `${APP_BAR_HEIGHT}`,
+          position: "absolute",
+          top: 0,
+          right: 0,
+          mr: 4,
+        }}
+      >
+        <LanguageSelect />
+      </Box>
       <img alt="landing pic" src={LandingPic} width="675px" />
       <Box display="flex" flexDirection="column">
         <img alt="logo pic" src={require("assets/logo.png")} width="286px" />
-        <Box
-          width="100%"
-          display="flex"
-          justifyContent="center"
-          onClick={() => {
-            i18n.changeLanguage(i18n.language === "th" ? "en" : "th");
-          }}
-        >
-          <Typography
-            variant="subtitle2"
-            color="primary"
-            sx={{ textDecoration: "underline", cursor: "pointer" }}
-          >
-            {t("changeLanguage")}
-          </Typography>
-        </Box>
         {changePassword ? (
           <FormControl sx={{ mt: 10, width: "100%", gap: 4 }}>
             <TextField required label={t("email")} variant="outlined" />

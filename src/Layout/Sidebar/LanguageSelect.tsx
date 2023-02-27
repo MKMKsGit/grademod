@@ -12,6 +12,17 @@ const displayChoice = [
   { value: "en", label: "English", pic: "EN.png" },
 ];
 
+const MenuProps = {
+  PaperProps: {
+    sx: {
+      width: `inherit`,
+      height: `88px`,
+      padding: 0,
+      borderRadius: "4px",
+    },
+  },
+};
+
 const LanguageSelect = () => {
   const { i18n } = useTranslation();
   const handleChange = (event: SelectChangeEvent) => {
@@ -36,6 +47,7 @@ const LanguageSelect = () => {
         ".MuiSvgIcon-root ": {
           color: "primary.main",
         },
+        bgcolor: "background.paper",
       }}
       onChange={handleChange}
       value={i18n.language}
@@ -54,6 +66,7 @@ const LanguageSelect = () => {
           </Box>
         );
       }}
+      MenuProps={MenuProps}
     >
       <MenuItem value="th">ภาษาไทย</MenuItem>
       <MenuItem value="en">English</MenuItem>
