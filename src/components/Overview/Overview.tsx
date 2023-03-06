@@ -17,12 +17,11 @@ const Overview = ({ stat, change, changeType, description }: OverviewProps) => {
 
   return (
     <Box
-      mt={5}
-      mb={5}
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
+      mt={2}
     >
       <Box display="flex" alignItems="baseline">
         <Typography
