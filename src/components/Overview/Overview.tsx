@@ -3,10 +3,11 @@ import { useTranslation } from "react-i18next";
 
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 
 type OverviewProps = {
-  stat: string;
-  change: string;
+  stat: string | number;
+  change: string | number;
   changeType: true | false;
   description: string;
 };
@@ -16,7 +17,8 @@ const Overview = ({ stat, change, changeType, description }: OverviewProps) => {
 
   return (
     <Box
-      mt={10}
+      mt={5}
+      mb={5}
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -28,12 +30,11 @@ const Overview = ({ stat, change, changeType, description }: OverviewProps) => {
           fontSize={64}
           fontWeight={600}
           display="inline"
+          m={1}
         >
           {stat}
         </Typography>
-        <Typography variant="h3" display="inline">
-          {t("studentUnit")}
-        </Typography>
+        <PeopleAltRoundedIcon fontSize="large" />
       </Box>
       <Box display="flex" alignItems="center">
         {changeType ? (

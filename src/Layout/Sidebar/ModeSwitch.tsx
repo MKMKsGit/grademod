@@ -66,6 +66,7 @@ const ModeSwitch = ({
         p: 1,
         backgroundColor: "lightgray",
         borderRadius: "8px",
+        width: "180px",
       }}
     >
       <StyledToggleButtonGroup
