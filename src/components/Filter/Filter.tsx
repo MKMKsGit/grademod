@@ -15,6 +15,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import ListItemText from "@mui/material/ListItemText";
 import SearchIcon from "@mui/icons-material/Search";
+import { Text } from "components/Base";
 
 type FilterProps = {
   title: string;
@@ -44,7 +45,8 @@ const Filter = ({ icon, title, data }: FilterProps) => {
   const MenuProps = {
     PaperProps: {
       sx: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        height: "100%",
+        maxHeight: ITEM_HEIGHT * 5.1 + ITEM_PADDING_TOP,
         width: `calc((${title.length}*9px) + 80px)`,
         minWidth: 150,
         padding: 0,
@@ -54,14 +56,23 @@ const Filter = ({ icon, title, data }: FilterProps) => {
 
   return (
     <FormControl
-      sx={{ m: 1, width: `calc((${title.length}*9px) + 80px)`, minWidth: 150 }}
+      sx={{
+        width: `calc((${title.length}*9px) + 80px)`,
+        bgcolor: "white",
+        borderRadius: "4px",
+        minWidth: 150,
+      }}
+      size="small"
     >
       <InputLabel
         id={`filter-${title}`}
         shrink={selected.length > 0}
         sx={{
+          bgcolor: "white",
+          border: "0px",
           marginLeft: `${selected.length > 0 ? "0px" : "30px"}`,
-          marginTop: `${selected.length > 0 ? "0px" : "2px"}`,
+          marginTop: `${selected.length > 0 ? "0px" : "1px"}`,
+          px: `${selected.length > 0 ? "2px" : "0px"}`,
         }}
       >
         {title}
@@ -75,14 +86,35 @@ const Filter = ({ icon, title, data }: FilterProps) => {
           <OutlinedInput
             sx={{ color: "darkgray" }}
             label={selected.length > 0 ? title : null}
-            startAdornment={<Box sx={{ mr: 1 }}>{icon ?? <SearchIcon />}</Box>}
+            startAdornment={
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                sx={{ mr: 1 }}
+              >
+                {icon ?? <SearchIcon />}
+              </Box>
+            }
           />
         }
-        renderValue={(selected) => handleValueRender(selected as string[])}
+        renderValue={(selected) => (
+          <Text
+            color="primary"
+            fontWeight={600}
+            sx={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {handleValueRender(selected as string[])}
+          </Text>
+        )}
         MenuProps={MenuProps}
       >
         {data.map((item) => (
-          <MenuItem key={item} value={item}>
+          <MenuItem sx={{ mt: 1, p: 0 }} key={item} value={item}>
             <Checkbox checked={selected.indexOf(item) > -1} />
             <ListItemText primary={item} />
           </MenuItem>

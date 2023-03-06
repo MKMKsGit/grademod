@@ -1,0 +1,2 @@
+export const SIDEBAR_WIDTH = 206;
+export const SIDEBAR_TOTAL_WIDTH = SIDEBAR_WIDTH + 24;

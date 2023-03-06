@@ -6,7 +6,7 @@
     "description": "in this academic year"
   },
   "studentUnit": "persons",
-  "compare": "comparing with previous academic year",
+  "compare": "comparing with\nprevious academic year",
   "honorRatio": {
     "main": "Honor recieved ratio",
     "description": "from all graduted student in this academic year",

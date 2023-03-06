@@ -5,6 +5,8 @@ import { Box, Button, Divider, List, ListSubheader } from "@mui/material";
 import { ListItem } from "./ListItem";
 import ModeSwitch from "./ModeSwitch";
 
+import Logo from "assets/Logo.svg";
+
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DatabaseIcon from "assets/icons/DatabaseIcon";
 import SchoolIcon from "@mui/icons-material/School";
@@ -20,6 +22,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import LogIcon from "assets/icons/LogIcon";
 import { useNavigate, useParams } from "react-router";
+import { SIDEBAR_WIDTH } from "Layout/constant";
+import Flex from "components/Base/Flex";
 
 const StyledSubheader = ({ text }: { text: string }) => {
   return (
@@ -68,21 +72,18 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        height: "100%",
-        width: "206px",
+        height: "calc(100vh - 48px)",
+        width: SIDEBAR_WIDTH,
         display: "flex",
         flexDirection: "column",
         margin: "24px 12px",
         gap: "20px",
       }}
     >
-      <img
-        src={require("assets/logo.png")}
-        alt="logo"
-        width="100%"
-        height="auto"
-      />
-      <ModeSwitch mode={mode} setMode={setMode} setSelected={setSelected} />
+      <img src={Logo} alt="logo" width="100%" height="auto" />
+      <Flex flexWrap="wrap" alignContent="center">
+        <ModeSwitch mode={mode} setMode={setMode} setSelected={setSelected} />
+      </Flex>
       {mode === "user" ? (
         <>
           <List component="nav" aria-label="mainpage and database">
