@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material";
-import { buttonTheme } from "./Button";
-import { textFieldTheme } from "./TextField";
+import { buttonTheme } from "./buttonTheme";
+import { textFieldTheme } from "./textFieldTheme";
+import { dataGridTheme } from "./dataGridTheme";
 
 const font = "'Noto Sans Thai', sans-serif";
 
@@ -78,6 +79,7 @@ export const MyTheme = createTheme({
   components: {
     ...buttonTheme.components,
     ...textFieldTheme.components,
+    ...dataGridTheme.components,
     MuiPaper: {
       styleOverrides: {
         root: {
