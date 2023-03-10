@@ -13,6 +13,7 @@ import {
   HonorChart,
   HonorSchoolChart,
 } from "./components";
+import Typography from "@mui/material/Typography";
 
 const SquareBox = styled(DashboardBox)(({ theme }) => ({
   //make it square here
@@ -65,6 +66,8 @@ const Dashboard = () => {
     description: t("compare"),
   };
 
+  const mockRatio = "20%";
+
   return (
     <Flex
       bgcolor={"lightgray"}
@@ -81,57 +84,80 @@ const Dashboard = () => {
             </Box>
           ))}
         </Flex>
-        <Flex id="wrapthis" height="100%" overflow="auto">
-          <Grid container spacing={5} height="100%">
-            <Grid item xs={3} height="33%">
-              <SquareBox title={t("totalStudent")}>
-                <Overview {...mockTotalStudent} />
-              </SquareBox>
-            </Grid>
-            <Grid item xs={3} height="33%">
-              <SquareBox
-                title={t("probation.main")}
-                subtitle={t("probation.description")}
-              >
-                <Overview {...mockProbation} />
-              </SquareBox>
-            </Grid>
-            <Grid item xs={3} height="33%">
-              <SquareBox
-                title={t("honorRatio.main")}
-                subtitle={t("honorRatio.description")}
-              >
-                <HonorChart />
-              </SquareBox>
-            </Grid>
-            <Grid item xs={3} height="33%">
-              <Paper elevation={0}></Paper>
-            </Grid>
-            <Grid container item xs={6} spacing={5}>
-              <Grid item xs={12}>
-                <DashboardBox
-                  title={t("charts.first")}
-                  subtitle={t("charts.description")}
-                >
-                  <AdmitChart />
-                </DashboardBox>
+        <Grid container spacing={5} maxHeight="calc(100vh - 132px)">
+          <Grid item xs={3}>
+            <SquareBox title={t("totalStudent")}>
+              <Overview {...mockTotalStudent} />
+            </SquareBox>
+          </Grid>
+          <Grid item xs={3}>
+            <SquareBox
+              title={t("probation.main")}
+              subtitle={t("probation.description")}
+            >
+              <Overview {...mockProbation} />
+            </SquareBox>
+          </Grid>
+          <Grid item xs={6}>
+            <Paper elevation={0}>
+              <Grid container spacing={5}>
+                <Grid container item xs={7}>
+                  <Grid item xs={12}>
+                    <Box minHeight={48}>
+                      <Typography
+                        variant="body1"
+                        fontWeight={"bold"}
+                        color={"superdarkgray"}
+                      >
+                        {t("honorRatio.main")}
+                      </Typography>
+                      <Typography variant="subtitle2" color={"text.disabled"}>
+                        {t("honorRatio.description")}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography
+                      variant="h3"
+                      fontSize={64}
+                      fontWeight={600}
+                      display="inline"
+                      m={1}
+                    >
+                      {mockRatio}
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Grid item xs={5}>
+                  <HonorChart />
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <DashboardBox
-                  title={t("charts.second")}
-                  subtitle={t("charts.description")}
-                >
-                  <HonorSchoolChart />
-                </DashboardBox>
-              </Grid>
+            </Paper>
+          </Grid>
+          <Grid container item xs={6} spacing={5}>
+            <Grid item xs={12}>
+              <DashboardBox
+                title={t("charts.first")}
+                subtitle={t("charts.description")}
+              >
+                <AdmitChart />
+              </DashboardBox>
             </Grid>
-            <Grid item xs={6}>
-              <Paper elevation={0}>
-                <GeoChart />
-              </Paper>
+            <Grid item xs={12}>
+              <DashboardBox
+                title={t("charts.second")}
+                subtitle={t("charts.description")}
+              >
+                <HonorSchoolChart />
+              </DashboardBox>
             </Grid>
           </Grid>
-        </Flex>
+          <Grid item xs={6}>
+            <Paper elevation={0}>
+              <GeoChart />
+            </Paper>
+          </Grid>
+        </Grid>
       </Flex>
     </Flex>
   );
