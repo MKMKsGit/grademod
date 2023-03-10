@@ -1,0 +1,31 @@
+{
+  "title": "Pre-Admission Educational Institutions",
+  "tabs": {
+    "tab1": "Overview"
+  },
+  "charts": {
+    "chart1": {
+      "title": "Line chart showing the number of admissions per academic year",
+      "xAxis": "Academic Year",
+      "yAxis": "Number of Admissions"
+    },
+    "chart2": {
+      "title": "Bar chart showing the number of admissions per academic year",
+      "xAxis": "Academic Year",
+      "yAxis": "Number of Admissions"
+    },
+    "chart3": {
+      "title": "Proportion of Educational Institution Types"
+    }
+  },
+  "table": {
+    "title": "Table showing pre-admission educational institution data",
+    "search": "Search Educational Institutions...",
+    "headers": [
+      "Educational Institution Name",
+      "Educational Institution Type",
+      "Province",
+      "Number of Admissions"
+    ]
+  }
+}

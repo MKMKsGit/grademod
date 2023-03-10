@@ -12,6 +12,8 @@ import loginEnglish from "./locales/en/login.json";
 import loginThai from "./locales/th/login.json";
 import userDashboardEnglish from "./locales/en/userDashboard.json";
 import userDashboardThai from "./locales/th/userDashboard.json";
+import schoolEnglish from "./locales/en/school.json";
+import schoolThai from "./locales/th/school.json";
 
 const resources = {
   en: {
@@ -20,6 +22,7 @@ const resources = {
     register: registerEnglish,
     login: loginEnglish,
     userDashboard: userDashboardEnglish,
+    school: schoolEnglish,
   },
   th: {
     filter: filterThai,
@@ -27,6 +30,7 @@ const resources = {
     register: registerThai,
     login: loginThai,
     userDashboard: userDashboardThai,
+    school: schoolThai,
   },
 };
 
