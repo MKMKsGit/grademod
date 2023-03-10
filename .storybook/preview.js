@@ -1,4 +1,4 @@
-import { MyTheme } from "../src/components/MyTheme";
+import { MyTheme } from "../src/themes/MyTheme";
 import { ThemeProvider } from "@mui/material";
 import "@mui/icons-material";
 import "../src/i18n";

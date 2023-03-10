@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-const textFieldTheme = createTheme({
+export const textFieldTheme = createTheme({
   components: {
     MuiTextField: {
       styleOverrides: {
@@ -13,5 +13,3 @@ const textFieldTheme = createTheme({
     },
   },
 });
-
-export default textFieldTheme;
