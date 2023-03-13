@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import DashboardBox from "../../containers/DashboardBox";
+import FrameBox from "../../containers/FrameBox";
 import { default as Component } from "./Overview";
 
 export default {
@@ -10,9 +10,9 @@ export default {
 
 const Template: ComponentStory<typeof Component> = (args) => (
   <Box width={260} height={260}>
-    <DashboardBox title="หัวข้อ">
+    <FrameBox title="หัวข้อ">
       <Component {...args} />
-    </DashboardBox>
+    </FrameBox>
   </Box>
 );
 

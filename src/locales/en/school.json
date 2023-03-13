@@ -1,5 +1,5 @@
 {
-  "title": "Pre-Admission Educational Institutions",
+  "title": "Pre-Admission Schools",
   "tabs": {
     "tab1": "Overview"
   },
@@ -15,15 +15,15 @@
       "yAxis": "Number of Admissions"
     },
     "chart3": {
-      "title": "Proportion of Educational Institution Types"
+      "title": "Proportion of School Types"
     }
   },
   "table": {
-    "title": "Table showing pre-admission educational institution data",
-    "search": "Search Educational Institutions...",
+    "title": "Table showing Schools data",
+    "search": "Search for schools...",
     "headers": [
-      "Educational Institution Name",
-      "Educational Institution Type",
+      "School Name",
+      "School Type",
       "Province",
       "Number of Admissions"
     ]
